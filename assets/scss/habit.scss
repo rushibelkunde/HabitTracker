@@ -1,0 +1,53 @@
+
+
+p{
+    color: rgb(50, 104, 241);
+}
+
+.habit-view{
+    display: flex;
+    // flex-wrap: wrap;
+    font-size: medium;
+    background-image: linear-gradient(rgb(255, 141, 92),rgb(81, 127, 244));
+    border-radius: 10px;
+    padding-top: 10px;
+    padding-left: 10px;
+
+
+    li{
+        display: flex;
+        flex-direction: column;
+        margin-right: 10px;
+        background-color: white;
+        border: 1px solid rgb(255, 255, 255);
+
+
+        button{
+            height: 30px;
+            background-color: rgb(0, 166, 255);
+            border: none;
+            border-radius: 10px;
+            color: white;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        
+
+
+    }
+
+    // li:nth-child(2n){
+    //     background-color: rgb(255, 255, 93);
+    // }
+
+    
+
+
+}
+
+
+.radio{
+    display: flex;
+    flex-direction: column;
+}

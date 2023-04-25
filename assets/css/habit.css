@@ -1,0 +1,28 @@
+p {
+  color: #3268f1; }
+
+.habit-view {
+  display: flex;
+  font-size: medium;
+  background-image: linear-gradient(#ff8d5c, #517ff4);
+  border-radius: 10px;
+  padding-top: 10px;
+  padding-left: 10px; }
+  .habit-view li {
+    display: flex;
+    flex-direction: column;
+    margin-right: 10px;
+    background-color: white;
+    border: 1px solid white; }
+    .habit-view li button {
+      height: 30px;
+      background-color: #00a6ff;
+      border: none;
+      border-radius: 10px;
+      color: white;
+      font-weight: bold;
+      margin-top: 10px; }
+
+.radio {
+  display: flex;
+  flex-direction: column; }

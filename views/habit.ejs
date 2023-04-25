@@ -1,0 +1,58 @@
+
+
+<div class="container">
+  <h1><%= habit.name %></h1>
+  
+  <p>Habit created at <%= habit.fulldate %></p>
+  <p>Status for the next 7 days</p>
+  <% var date = parseInt(habit.date) %>
+  <ul class="habit-view">
+    <% for (let i = 0; i <= 6; i++) { %>
+        <li class="habitDay">
+          <% if(date>habit.days){%>
+            <% date = 1 %>
+          <%}%>
+        <%= date++ %>
+        <br>
+        Status :
+        <% if (habit.status[i] === 'done') { %>
+          <i class="fa-solid fa-square-check fa-2xl" style="color: green; margin-top: 20px;"></i>
+        <% } else if (habit.status[i] === 'not done') { %>
+          <i class="fa-solid fa-square-xmark fa-2xl" style="color: red; margin-top: 20px;"></i>
+        <% } else{ %>
+          <i class="fa-sharp fa-solid fa-hourglass fa-xl" style="color: darkgrey; margin-top: 20px;"></i>
+        <% } %>
+
+        <hr>
+      
+      <form method="POST" action="/habits/<%= habit._id %>?day=<%=i%>">
+        <div class="radio">
+          <input type="hidden" name="day" value="0">
+        <label>
+          <input type="radio" name="status" value="done" <% if (habit.status[0] === 'done') { %>checked<% } %>> Done
+        </label>
+        <label>
+          <input type="radio" name="status" value="not done" <% if (habit.status[0] === 'not done') { %>checked<% } %>> Not Done
+        </label>
+        <label>
+          <input type="radio" name="status" value="none" <% if (habit.status[0] === 'none') { %>checked<% } %>> None
+        </label>
+        </div>
+        <button type="submit">Save</button>
+      </form>
+
+    </li>
+
+    
+    
+    <% } %>
+
+  </ul>
+
+  <a href="/delete-habit/?id=<%=habit._id%>">delete habit</a>
+
+  
+
+  
+</div>
+

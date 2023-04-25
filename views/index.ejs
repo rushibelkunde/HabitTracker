@@ -1,0 +1,26 @@
+
+<div class="home-container">
+
+  <h2>Add a New Habit</h2>
+
+  <form method="POST" action="/habits" class="habit-form">
+    
+      <input type="text" name="name" placeholder="Habit Name" required>
+    
+      <button type="submit">+ Add Habit</button>
+  </form>
+
+  <h2>Current Habits</h2>
+
+  <ul>
+    <% for (let habit of habits) { %>
+      <%= habit.fulldate %>
+      <li>
+        <a href="/habits/<%= habit._id %>"><i class="fa-solid fa-circle-info" style="margin-right: 5px;"></i><%= habit.name %></a>
+        <a href="/delete-habit/?id=<%=habit._id%>"><i class="fa-solid fa-trash fa-sm"></i></a>
+      </li>
+    <% } %>
+  </ul>
+
+</div>
+
