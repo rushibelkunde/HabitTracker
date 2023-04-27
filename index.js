@@ -16,6 +16,7 @@ app.use(sassMiddleware({
 }))
 
 app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 app.use(express.static("./assets"))
 app.use(expressLayouts);
 
